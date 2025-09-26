@@ -378,6 +378,7 @@ elif st.session_state.user is not None:
                 )
                 conn.commit()
                 st.success("✅ Thank you! Your feedback has been submitted.")
+                
 # ---------------------- Conclusion Page ----------------------
 if st.session_state.page == "📌 Conclusion":
     st.header("📌 Conclusion & Key Takeaways")
@@ -420,27 +421,27 @@ if st.session_state.page == "📌 Conclusion":
     
     st.markdown('</div>', unsafe_allow_html=True)
     
-    # -------------- Vlog Page -------------------------
-elif st.session_state.page == "📹 Vlog":
-        st.header("📹 Global Balance Vlogs")
+    #--------------- Vlog Page ------------------
+    elif st.session_state.page == "📹 Vlog":
+    st.header("📹 Global Balance Vlogs")
 
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.subheader("📖 About This Section")
-        st.markdown("""
-        Welcome to the **Vlog Learning Hub** 🎥  
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.subheader("📖 About This Section")
+    st.markdown("""
+    Welcome to the **Vlog Learning Hub** 🎥  
 
-        Here you will find **curated video tutorials** that help you:  
-        - Build interactive **dashboards** for data analysis  
-        - Create and deploy **Streamlit websites** with ease  
-        - Understand best practices in UI/UX and app design  
-        👉 Whether you are a beginner or an advanced learner, these vlogs are designed to **guide you step by step**.
-        """)
+    Here you will find **curated video tutorials** that help you:  
+    - Build interactive **dashboards** for data analysis  
+    - Create and deploy **Streamlit websites** with ease  
+    - Understand best practices in UI/UX and app design  
+    """)
 
-    # Example vlog embeds (You can replace with your own YouTube links)
+    # Make sure this line is indented 4 spaces from the elif
     vlog_links = [
         ("Build an Interactive Dashboard with Streamlit", "https://www.youtube.com/embed/8M20LyCZDOY"),
         ("Build a Streamlit App with Login & Signup", "https://www.youtube.com/embed/-IM3531b1XU"),
     ]
+
     for title, link in vlog_links:
         st.markdown(f"### 🎥 {title}")
         components.html(f"""
@@ -450,4 +451,5 @@ elif st.session_state.page == "📹 Vlog":
             allowfullscreen></iframe>
         """, height=420)
         st.markdown("---")
+
     st.markdown('</div>', unsafe_allow_html=True)
