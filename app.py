@@ -212,7 +212,7 @@ elif st.session_state.user is not None:
 
    # --------Sidebar Navigation ---------
     st.sidebar.title("Navigation")
-    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "📹 Vlog","📌 Conclusion"]
+    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "📹 Vlog", "📁 Upload Dataset", "📌 Conclusion"]
     for item in top_items:
         if st.sidebar.button(item, key=item):
             st.session_state.page = item
@@ -417,6 +417,60 @@ elif st.session_state.user is not None:
         4. Provides a **secure, user-friendly, and insightful** platform for analysts, researchers, and decision-makers
         """)
         st.markdown('</div>', unsafe_allow_html=True)
+
+    # --- Upload Dataset Page ---
+    elif st.session_state.page == "📁 Upload Dataset":
+       st.header("📁 Upload Dataset & Get Insights")
+    
+    st.markdown('<div class="card">', unsafe_allow_html=True)
+
+    uploaded_file = st.file_uploader("Upload your CSV or Excel file", type=['csv', 'xlsx'])
+    
+    if uploaded_file:
+        # Load dataset
+        if uploaded_file.name.endswith('.csv'):
+            df = pd.read_csv(uploaded_file)
+        else:
+            df = pd.read_excel(uploaded_file)
+
+        st.success("✅ File uploaded successfully!")
+        st.subheader("Dataset Preview")
+        st.dataframe(df.head())
+
+        # Basic info
+        st.subheader("Dataset Summary")
+        st.markdown(f"- **Number of Rows:** {df.shape[0]}")
+        st.markdown(f"- **Number of Columns:** {df.shape[1]}")
+        st.markdown(f"- **Column Names:** {', '.join(df.columns)}")
+        
+        st.subheader("Data Types & Missing Values")
+        info_df = pd.DataFrame({
+            "Data Type": df.dtypes,
+            "Missing Values": df.isnull().sum()
+        })
+        st.dataframe(info_df)
+
+        st.subheader("Basic Statistics")
+        st.dataframe(df.describe())
+
+        # Suggest dashboard ideas
+        st.subheader("💡 Dashboard Suggestions")
+        numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
+        categorical_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
+
+        st.markdown("**Suggested charts based on your columns:**")
+        if numeric_cols:
+            st.markdown(f"- Line chart or bar chart for numeric columns: {', '.join(numeric_cols)}")
+        if categorical_cols:
+            st.markdown(f"- Pie chart, count plot, or bar chart for categorical columns: {', '.join(categorical_cols)}")
+        st.markdown("""
+        - Combine categorical and numeric columns for grouped bar charts  
+        - Use filters to slice data by categories  
+        - Summarize key metrics in cards for your dashboard
+        """)
+    
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
     # --- Vlog Page ---
     elif st.session_state.page == "📹 Vlog":
