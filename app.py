@@ -410,6 +410,7 @@ elif st.session_state.user is not None:
         """, height=420)
         st.markdown("---")
     st.markdown('</div>', unsafe_allow_html=True)
+    
     # ---------------------- Conclusion Page ----------------------
     if st.session_state.page == "📌 Conclusion":
       st.header("📌 Conclusion & Key Takeaways")
