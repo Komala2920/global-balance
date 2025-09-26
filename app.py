@@ -381,11 +381,7 @@ elif st.session_state.user is not None:
     # -------------- Vlog Page -------------------------
     elif st.session_state.page == "📹 Vlog":
         st.header("📹 Global Balance Vlogs")
-        # Example camera / video / recording animation JSON links
-        st_lottie_url("https://assets5.lottiefiles.com/private_files/lf30_editor_s5wwk5ak.json", height=200)
-        st_lottie_url("https://assets2.lottiefiles.com/packages/lf20_x62chJ.json", height=200)
-        st_lottie_url("https://assets9.lottiefiles.com/packages/lf20_bXGVu4.json", height=200)
-
+        st_lottie_url("https://assets.lottiefiles.com/private_files/lf30_xyz123.json", height=200)
 
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.subheader("📖 About This Section")
