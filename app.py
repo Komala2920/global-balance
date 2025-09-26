@@ -212,7 +212,7 @@ elif st.session_state.user is not None:
 
    # --------Sidebar Navigation ---------
     st.sidebar.title("Navigation")
-    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "📹 Vlog", "Conclusion"]
+    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "📹 Vlog"]
     for item in top_items:
         if st.sidebar.button(item, key=item):
             st.session_state.page = item
@@ -409,22 +409,4 @@ elif st.session_state.user is not None:
             allowfullscreen></iframe>
         """, height=420)
         st.markdown("---")
-    st.markdown('</div>', unsafe_allow_html=True)
-    # ---------------------- Conclusion Section ----------------------
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.subheader("✅ Conclusion & Takeaways")
-    st.markdown("""
-    The **Global Balance platform** provides a comprehensive environment to **analyze global economic data, track financial trends, and make informed decisions**.  
-
-    Key insights and outcomes from this app:
-    - 🌐 Access and visualize multi-country datasets in a secure, interactive manner.
-    - 📊 Gain actionable insights through dynamic dashboards with real-time indicators.
-    - 👤 Manage user profiles and customize your experience for better engagement.
-    - 💬 Submit feedback to improve platform functionality and usability.
-    - 📹 Learn from curated **vlogs** to enhance your skills in Streamlit, dashboard creation, and data visualization.
-
-    This platform bridges the gap between **data analysis and real-world decision-making**, making it an invaluable tool for analysts, researchers, and decision-makers alike.  
-
-    We invite users to explore, interact, and learn through both the dashboards and vlogs – driving a deeper understanding of **global economic patterns**.
-     """)
     st.markdown('</div>', unsafe_allow_html=True)
