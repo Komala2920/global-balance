@@ -212,7 +212,7 @@ elif st.session_state.user is not None:
 
    # --------Sidebar Navigation ---------
     st.sidebar.title("Navigation")
-    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "📹 Vlog"]
+    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "📹 Vlog","📌 Conclusion"]
     for item in top_items:
         if st.sidebar.button(item, key=item):
             st.session_state.page = item
@@ -410,3 +410,42 @@ elif st.session_state.user is not None:
         """, height=420)
         st.markdown("---")
     st.markdown('</div>', unsafe_allow_html=True)
+    # ---------------------- Conclusion Page ----------------------
+    if st.session_state.page == "📌 Conclusion":
+      st.header("📌 Conclusion & Key Takeaways")
+      st_lottie_url("https://assets2.lottiefiles.com/packages/lf20_u4yrau.json", height=200)  # Example Lottie
+
+      st.markdown('<div class="card">', unsafe_allow_html=True)
+      st.subheader("🌐 Overview")
+      st.markdown("""
+      The **Global Balance platform** brings together global economic datasets and interactive dashboards to help users:
+      - Analyze trends in GDP, income inequality, employment, and regional comparisons  
+      - Visualize and compare country-wise and global financial indicators  
+      - Track insights in real-time through embedded dashboards  
+      - Access curated vlogs for learning dashboard creation, Streamlit app development, and UI/UX best practices
+      """)
+
+      st.subheader("📊 Dashboard Insights")
+      st.markdown("""
+      - Emerging economies are growing rapidly in the last decade  
+      - Developed nations have slower growth but lower inequality  
+      - Africa and Asia present both opportunities and challenges  
+      - Users can filter, drill down, and interact with the visualizations to extract actionable insights
+      """)
+
+      st.subheader("💻 Platform Summary")
+      st.markdown("""
+      - **User Management:** Secure login, signup, profile updates, and password management  
+      - **Feedback Portal:** Submit ratings, usability feedback, and suggestions  
+      - **Learning Hub:** Vlogs guide users to build dashboards and Streamlit apps efficiently  
+      - **Accessibility:** Intuitive navigation, interactive visualizations, and clear summaries make insights actionable
+      """)
+
+      st.subheader("✅ Key Takeaways")
+      st.markdown("""
+      1. The platform integrates **data, visualization, and learning resources** in one place.  
+      2. Users can make **data-driven decisions** based on global economic patterns.  
+      3. Continuous **feedback and learning** ensure platform improvement and skill enhancement.  
+      4. The website provides a **comprehensive, secure, and user-friendly experience** for analysts, researchers, and decision-makers.
+      """)
+      st.markdown('</div>', unsafe_allow_html=True)
