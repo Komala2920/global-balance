@@ -381,7 +381,7 @@ elif st.session_state.user is not None:
     # -------------- Vlog Page -------------------------
     elif st.session_state.page == "📹 Vlog":
         st.header("📹 Global Balance Vlogs")
-        st_lottie_url("https://assets2.lottiefiles.com/packages/lf20_jtbfg2nb.json", height=200)
+        st_lottie_url("https://assets1.lottiefiles.com/packages/lf20_6fzzjnp3.json", height=200)
 
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.subheader("🌍 Watch Our Insights & Stories")
@@ -390,7 +390,7 @@ elif st.session_state.user is not None:
     # Example vlog embeds (You can replace with your own YouTube links)
     vlog_links = [
         ("Global Economic Outlook 2025", "https://www.youtube.com/embed/5MgBikgcWnY"),
-        ("Streamlit: The Fastest Way To Build Python Apps?", "https://www.youtube.com/watch?v=D0D4Pa22iG0"),
+        ("Streamlit: The Fastest Way To Build Python Apps?", "https://youtu.be/D0D4Pa22iG0?si=bCVtGZfynyPSTzdi"),
         ("India's Growth Story", "https://www.youtube.com/embed/x7X9w_GIm1s"),
     ]
 
@@ -404,4 +404,3 @@ elif st.session_state.user is not None:
         """, height=420)
         st.markdown("---")
     st.markdown('</div>', unsafe_allow_html=True)
-
