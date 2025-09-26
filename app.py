@@ -8,18 +8,6 @@ import streamlit.components.v1 as components
 import requests
 from dotenv import load_dotenv
 import os
-# Load environment variables
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")  # ✅ Look up by variable name
-print("API KEY FOUND:", api_key is not None)  # Debug
-
-# ---------------------- OPTIONAL CHATBOT ----------------------
-try:
-    import openai
-    OPENAI_AVAILABLE = True
-except ModuleNotFoundError:
-    OPENAI_AVAILABLE = False
-
 
 # ---------------------- DATABASE ----------------------
 conn = sqlite3.connect('users.db', check_same_thread=False)
@@ -224,7 +212,7 @@ elif st.session_state.user is not None:
 
    # --------Sidebar Navigation ---------
     st.sidebar.title("Navigation")
-    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback", "🤖 Chatbot" ]
+    top_items = ["🏠 Home", "📊 Dashboard", "👤 Profile", "💬 Feedback"]
     for item in top_items:
         if st.sidebar.button(item, key=item):
             st.session_state.page = item
@@ -391,61 +379,3 @@ elif st.session_state.user is not None:
                 conn.commit()
                 st.success("✅ Thank you! Your feedback has been submitted.")
 
-# -------------- Chatbot Page ---------------
-elif st.session_state.page == "🤖 Chatbot":
-    st.header("🤖 AI Chatbot Assistant")
-
-    # ✅ Load API key from .env or Streamlit Secrets
-    api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY", None)
-
-    if not OPENAI_AVAILABLE:
-        st.warning("⚠ OpenAI library not installed. Please install with `pip install openai`.")
-    elif not api_key:
-        st.info("🔑 Chatbot is in DEMO mode (no API key found). Your messages will just echo back.")
-
-        # Show chat history
-        for chat in st.session_state.chat_history:
-            with st.chat_message(chat["role"]):
-                st.markdown(chat["content"])
-
-        # Demo echo bot
-        user_input = st.chat_input("Type a message...")
-        if user_input:
-            st.session_state.chat_history.append({"role": "user", "content": user_input})
-            with st.chat_message("user"):
-                st.markdown(user_input)
-
-            bot_reply = f"🔁 (Demo Reply) You said: {user_input}"
-            st.session_state.chat_history.append({"role": "assistant", "content": bot_reply})
-            with st.chat_message("assistant"):
-                st.markdown(bot_reply)
-
-    else:
-        from openai import OpenAI
-        client = OpenAI(api_key=api_key)
-
-        # Show chat history
-        for chat in st.session_state.chat_history:
-            with st.chat_message(chat["role"]):
-                st.markdown(chat["content"])
-
-        # User input
-        user_input = st.chat_input("Ask me anything...")
-        if user_input:
-            st.session_state.chat_history.append({"role": "user", "content": user_input})
-            with st.chat_message("user"):
-                st.markdown(user_input)
-
-            try:
-                response = client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=st.session_state.chat_history
-                )
-                bot_reply = response.choices[0].message.content
-
-                st.session_state.chat_history.append({"role": "assistant", "content": bot_reply})
-                with st.chat_message("assistant"):
-                    st.markdown(bot_reply)
-
-            except Exception as e:
-                st.error(f"❌ Error: {str(e)}")
