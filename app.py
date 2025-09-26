@@ -472,7 +472,7 @@ elif st.session_state.page == "📁 Upload Dataset":
     st.markdown('</div>', unsafe_allow_html=True)
     
     # --- Vlog Page ---
-    elif st.session_state.page == "📹 Vlog":
+ elif st.session_state.page == "📹 Vlog":
         st.header("📹 Global Balance Vlogs")
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.subheader("📖 About This Section")
