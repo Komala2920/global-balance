@@ -412,7 +412,7 @@ elif st.session_state.user is not None:
     st.markdown('</div>', unsafe_allow_html=True)
     
     # ---------------------- Conclusion Page ----------------------
-   if st.session_state.page == "📌 Conclusion":
+if st.session_state.page == "📌 Conclusion":
     st.header("📌 Conclusion & Key Takeaways")
     # Optional Lottie for visual appeal
     st_lottie_url("https://assets2.lottiefiles.com/packages/lf20_u4yrau.json", height=200)
