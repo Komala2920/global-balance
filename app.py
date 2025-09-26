@@ -381,7 +381,7 @@ elif st.session_state.user is not None:
     # -------------- Vlog Page -------------------------
     elif st.session_state.page == "📹 Vlog":
         st.header("📹 Global Balance Vlogs")
-        st_lottie_url("https://assets1.lottiefiles.com/packages/lf20_6fzzjnp3.json", height=200)
+        st_lottie_url("https://assets6.lottiefiles.com/packages/lf20_dy3mwh3p.json", height=200)
 
         st.markdown('<div class="card">', unsafe_allow_html=True)
         st.subheader("🌍 Watch Our Insights & Stories")
