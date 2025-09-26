@@ -419,8 +419,8 @@ elif st.session_state.user is not None:
         st.markdown('</div>', unsafe_allow_html=True)
 
     # --- Upload Dataset Page ---
-    elif st.session_state.page == "📁 Upload Dataset":
-       st.header("📁 Upload Dataset & Get Insights")
+  elif st.session_state.page == "📁 Upload Dataset":
+    st.header("📁 Upload Dataset & Get Insights")
     
     st.markdown('<div class="card">', unsafe_allow_html=True)
 
@@ -470,8 +470,7 @@ elif st.session_state.user is not None:
         """)
     
     st.markdown('</div>', unsafe_allow_html=True)
-
-
+    
     # --- Vlog Page ---
     elif st.session_state.page == "📹 Vlog":
         st.header("📹 Global Balance Vlogs")
