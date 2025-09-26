@@ -379,77 +379,70 @@ elif st.session_state.user is not None:
                 conn.commit()
                 st.success("✅ Thank you! Your feedback has been submitted.")
                 
-# ---------------------- Conclusion Page ----------------------
-if st.session_state.page == "📌 Conclusion":
-    st.header("📌 Conclusion & Key Takeaways")
-    # Optional Lottie for visual appeal
-    st_lottie_url("https://assets2.lottiefiles.com/packages/lf20_u4yrau.json", height=200)
+    # --- Conclusion Page ---
+    elif st.session_state.page == "📌 Conclusion":
+        st.header("📌 Conclusion & Key Takeaways")
+        st_lottie_url("https://assets2.lottiefiles.com/packages/lf20_u4yrau.json", height=200)
 
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    
-    st.subheader("🌐 Platform Overview")
-    st.markdown("""
-    The **Global Balance platform** is designed to integrate global economic datasets with interactive dashboards to help users:
-    - Analyze trends in GDP, income inequality, employment, and regional comparisons  
-    - Visualize and compare country-wise and global financial indicators  
-    - Track insights in real-time through embedded dashboards
-    """)
+        st.markdown('<div class="card">', unsafe_allow_html=True)
+        st.subheader("🌐 Platform Overview")
+        st.markdown("""
+        The **Global Balance platform** integrates global economic datasets with interactive dashboards:
+        - Analyze trends in GDP, income inequality, employment, and regional comparisons  
+        - Visualize and compare country-wise and global financial indicators  
+        - Track insights in real-time through embedded dashboards
+        """)
 
-    st.subheader("📊 Dashboard Insights")
-    st.markdown("""
-    - Emerging economies show rapid growth over the last decade  
-    - Developed nations display slower growth but lower inequality  
-    - Africa and Asia remain regions of both opportunities and challenges  
-    - Users can filter, drill down, and interact with visualizations to extract actionable insights
-    """)
+        st.subheader("📊 Dashboard Insights")
+        st.markdown("""
+        - Emerging economies show rapid growth over the last decade  
+        - Developed nations display slower growth but lower inequality  
+        - Africa and Asia remain regions of both opportunities and challenges  
+        - Users can filter, drill down, and interact with visualizations to extract actionable insights
+        """)
 
-    st.subheader("💻 Website Features")
-    st.markdown("""
-    - **User Management:** Secure login, signup, profile updates, and password management  
-    - **Feedback Portal:** Submit ratings, usability feedback, and suggestions  
-    - **Interactive Dashboards:** Explore real-time economic indicators  
-    - **Intuitive Navigation:** Easy-to-use interface for all users
-    """)
+        st.subheader("💻 Website Features")
+        st.markdown("""
+        - **User Management:** Secure login, signup, profile updates, and password management  
+        - **Feedback Portal:** Submit ratings, usability feedback, and suggestions  
+        - **Interactive Dashboards:** Explore real-time economic indicators  
+        - **Intuitive Navigation:** Easy-to-use interface for all users
+        """)
 
-    st.subheader("✅ Key Takeaways")
-    st.markdown("""
-    1. Combines **data, visualization, and analysis tools** in a single platform  
-    2. Enables **data-driven decisions** based on global economic patterns  
-    3. Encourages continuous **feedback and learning** to improve user experience  
-    4. Provides a **secure, user-friendly, and insightful** platform for analysts, researchers, and decision-makers
-    """)
-    
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    #--------------- Vlog Page ------------------
-  elif st.session_state.page == "📹 Vlog":
-    st.header("📹 Global Balance Vlogs")
+        st.subheader("✅ Key Takeaways")
+        st.markdown("""
+        1. Combines **data, visualization, and analysis tools** in a single platform  
+        2. Enables **data-driven decisions** based on global economic patterns  
+        3. Encourages continuous **feedback and learning** to improve user experience  
+        4. Provides a **secure, user-friendly, and insightful** platform for analysts, researchers, and decision-makers
+        """)
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.subheader("📖 About This Section")
-    st.markdown("""
-    Welcome to the **Vlog Learning Hub** 🎥  
+    # --- Vlog Page ---
+    elif st.session_state.page == "📹 Vlog":
+        st.header("📹 Global Balance Vlogs")
+        st.markdown('<div class="card">', unsafe_allow_html=True)
+        st.subheader("📖 About This Section")
+        st.markdown("""
+        Welcome to the **Vlog Learning Hub** 🎥  
+        Here you will find **curated video tutorials** that help you:  
+        - Build interactive **dashboards** for data analysis  
+        - Create and deploy **Streamlit websites** with ease  
+        - Understand best practices in UI/UX and app design  
+        """)
 
-    Here you will find **curated video tutorials** that help you:  
-    - Build interactive **dashboards** for data analysis  
-    - Create and deploy **Streamlit websites** with ease  
-    - Understand best practices in UI/UX and app design  
-    """)
+        vlog_links = [
+            ("Build an Interactive Dashboard with Streamlit", "https://www.youtube.com/embed/8M20LyCZDOY"),
+            ("Build a Streamlit App with Login & Signup", "https://www.youtube.com/embed/-IM3531b1XU"),
+        ]
 
-    # Make sure this line is indented 4 spaces from the elif
-    vlog_links = [
-        ("Build an Interactive Dashboard with Streamlit", "https://www.youtube.com/embed/8M20LyCZDOY"),
-        ("Build a Streamlit App with Login & Signup", "https://www.youtube.com/embed/-IM3531b1XU"),
-    ]
-
-    for title, link in vlog_links:
-        st.markdown(f"### 🎥 {title}")
-        components.html(f"""
-            <iframe width="100%" height="400" 
-            src="{link}" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-        """, height=420)
-        st.markdown("---")
-
-    st.markdown('</div>', unsafe_allow_html=True)
+        for title, link in vlog_links:
+            st.markdown(f"### 🎥 {title}")
+            components.html(f"""
+                <iframe width="100%" height="400" 
+                src="{link}" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+            """, height=420)
+            st.markdown("---")
+        st.markdown('</div>', unsafe_allow_html=True)
