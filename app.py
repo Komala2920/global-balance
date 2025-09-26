@@ -390,8 +390,8 @@ elif st.session_state.user is not None:
     # Example vlog embeds (You can replace with your own YouTube links)
     vlog_links = [
         ("Global Economic Outlook 2025", "https://www.youtube.com/embed/5MgBikgcWnY"),
-        ("Streamlit: The Fastest Way To Build Python Apps?", "https://youtu.be/D0D4Pa22iG0?si=bCVtGZfynyPSTzdi"),
-        ("India's Growth Story", "https://www.youtube.com/embed/x7X9w_GIm1s"),
+        ("Build an Interactive Dashboard with Streamlit", "https://www.youtube.com/embed/8M20LyCZDOY"),
+        ("Streamlit Full Website Tutorial", "https://www.youtube.com/embed/8M20LyCZDOY"),
     ]
 
     for title, link in vlog_links:
