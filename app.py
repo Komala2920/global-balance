@@ -437,10 +437,10 @@ elif st.session_state.page == "📹 Vlog":
         """)
 
     # Example vlog embeds (You can replace with your own YouTube links)
-    vlog_links = (
+    vlog_links = [
         ("Build an Interactive Dashboard with Streamlit", "https://www.youtube.com/embed/8M20LyCZDOY"),
         ("Build a Streamlit App with Login & Signup", "https://www.youtube.com/embed/-IM3531b1XU"),
-    )
+    ]
     for title, link in vlog_links:
         st.markdown(f"### 🎥 {title}")
         components.html(f"""
