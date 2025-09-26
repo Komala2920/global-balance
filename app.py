@@ -390,9 +390,7 @@ elif st.session_state.user is not None:
     # Example vlog embeds (You can replace with your own YouTube links)
     vlog_links = [
         ("Build an Interactive Dashboard with Streamlit", "https://www.youtube.com/embed/8M20LyCZDOY"),
-        ("Power BI Dashboard Basics", "https://www.youtube.com/embed/TMHBU6X6KkA"),
         ("Build a Streamlit App with Login & Signup", "https://www.youtube.com/embed/-IM3531b1XU"),
-        ("Deploy Streamlit App on GitHub & Streamlit Cloud", "https://www.youtube.com/embed/kxzrjFz_4vU")
     ]
 
     for title, link in vlog_links:
