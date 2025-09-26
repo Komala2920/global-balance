@@ -384,8 +384,16 @@ elif st.session_state.user is not None:
         st_lottie_url("https://assets6.lottiefiles.com/packages/lf20_dy3mwh3p.json", height=200)
 
         st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.subheader("🌍 Watch Our Insights & Stories")
-        st.markdown("Here are some vlogs and explainer videos related to Global Balance, economy, and finance.")
+        st.subheader("📖 About This Section")
+        st.markdown("""
+        Welcome to the **Vlog Learning Hub** 🎥  
+
+        Here you will find **curated video tutorials** that help you:  
+        - Build interactive **dashboards** for data analysis  
+        - Create and deploy **Streamlit websites** with ease  
+        - Understand best practices in UI/UX and app design  
+        👉 Whether you are a beginner or an advanced learner, these vlogs are designed to **guide you step by step**.
+        """)
 
     # Example vlog embeds (You can replace with your own YouTube links)
     vlog_links = [
